@@ -5,37 +5,109 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>جاري تحديث المنصة</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo', sans-serif;
+}
+
 body{
-    margin:0;
-    padding:0;
-    background:#0f172a;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    font-family:Arial;
-    color:white;
-    text-align:center;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#0f172a,#1e293b,#0ea5e9,#6366f1);
+background-size:400% 400%;
+animation: gradientBG 10s ease infinite;
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 .container{
-    animation: fade 1.5s ease-in-out infinite alternate;
+background:rgba(255,255,255,0.08);
+padding:40px;
+border-radius:20px;
+backdrop-filter:blur(15px);
+box-shadow:0 0 40px rgba(0,0,0,0.4);
+width:90%;
+max-width:500px;
+animation:fadeIn 1.5s ease-in-out;
 }
 
-@keyframes fade{
-    from{opacity:0.6;}
-    to{opacity:1;}
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+margin-bottom:20px;
+letter-spacing:2px;
 }
 
 h1{
-    font-size:40px;
-    margin-bottom:15px;
+font-size:26px;
+margin-bottom:15px;
 }
 
 p{
-    font-size:18px;
-    color:#cbd5e1;
+font-size:15px;
+opacity:0.9;
+margin-bottom:25px;
+}
+
+.loader{
+width:80px;
+height:80px;
+border:6px solid rgba(255,255,255,0.2);
+border-top:6px solid white;
+border-radius:50%;
+margin:20px auto;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+to{transform:rotate(360deg);}
+}
+
+.progress{
+height:6px;
+width:100%;
+background:rgba(255,255,255,0.2);
+border-radius:10px;
+overflow:hidden;
+margin-top:20px;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:white;
+animation:loading 6s ease-in-out infinite;
+}
+
+@keyframes loading{
+0%{width:0%;}
+50%{width:80%;}
+100%{width:100%;}
+}
+
+.footer{
+margin-top:20px;
+font-size:13px;
+opacity:0.7;
 }
 </style>
 </head>
@@ -43,9 +115,19 @@ p{
 <body>
 
 <div class="container">
-    <h1>🚧 جاري تحديث المنصة</h1>
-    <p>نعمل حالياً على تحسين المنصة لتقديم تجربة أفضل لكم</p>
-    <p>برجاء العودة لاحقاً ❤️</p>
+<div class="logo">MR.ABAS PLATFORM</div>
+<h1>🚧 جاري تحديث المنصة</h1>
+<p>نعمل حالياً على تطوير وتحسين التجربة لتكون أقوى وأسرع</p>
+
+<div class="loader"></div>
+
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
+
+<div class="footer">
+الرجاء العودة لاحقاً ❤️
+</div>
 </div>
 
 </body>
